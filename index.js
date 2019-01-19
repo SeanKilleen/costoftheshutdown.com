@@ -30,6 +30,6 @@ $(document).ready(function () {
 });
 
 function go() {
-    $("#counter").html(start.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+    $("#counter").html("$" + start.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
     start += (costPerMillisecond * peopleAffectedBy2018);
 }
