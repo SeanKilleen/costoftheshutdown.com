@@ -1,0 +1,15 @@
+body, html {
+    height: 100%;
+    display: flex;
+    justify-items: center;
+    align-items: center;  
+    justify-content: center;
+    align-content: center;
+}
+  .container { /* thing to center */
+    /* margin: auto; */
+  }
+
+  #counter {
+      /* font-size: 500%; */
+  }
