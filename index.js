@@ -14,22 +14,12 @@ var personCostPerSecond = personCostPerMinute / 60;
 var costPerMillisecond = personCostPerSecond / 1000;
   
 var shutdown2018Began = new Date('12/23/2018').getTime();
-var now = new Date().getTime();
+var shutdown2018end = new Date('1/26/2019 8:00').getTime();
 
-var millisecondsSince = (now - shutdown2018Began);
+var millisecondsSince = (shutdown2018end - shutdown2018Began);
 
-var start = millisecondsSince * costPerMillisecond * peopleAffectedBy2018;
-var speed = 1;
+var cost = millisecondsSince * costPerMillisecond * peopleAffectedBy2018;
 
 $(document).ready(function () {
-  
-    go();
-    setInterval(function () {
-        go();
-    }, speed);
+    $("#counter").html("$" + cost.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
 });
-
-function go() {
-    $("#counter").html("$" + start.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-    start += (costPerMillisecond * peopleAffectedBy2018);
-}
